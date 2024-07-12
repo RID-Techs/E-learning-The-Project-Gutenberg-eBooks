@@ -1,3 +1,5 @@
+// gutendex.com API has been used for this project
+
 const wraper = document.querySelector(".container");
 const books = () => {
   fetch("https://gutendex.com/books")
@@ -14,9 +16,9 @@ const books = () => {
 
       items.forEach((element) => {
       
-  console.log(
-  `Book Title : ${element.title}\nAuthor : ${element.authors[0].name}\nLanguage : ${element.languages}\nRead : ${element.formats["text/html"]}\nImage : ${element.formats["image/jpeg"]}`
-  );
+  // console.log(
+  // `Book Title : ${element.title}\nAuthor : ${element.authors[0].name}\nLanguage : ${element.languages}\nRead : ${element.formats["text/html"]}\nImage : ${element.formats["image/jpeg"]}`
+  // );
   
         const createDiv = document.createElement("div");
         createDiv.setAttribute("class", "Book_items");

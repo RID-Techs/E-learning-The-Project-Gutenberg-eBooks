@@ -33,6 +33,11 @@
     padding: 10px;
   }
 
+  #title-logo{
+    box-shadow: inset 0px 10px red, inset 12px 0px yellow;
+    color: rgb(51, 43, 158);
+  }
+
   header {
     display: flex;
     gap: 1em;
@@ -139,4 +144,10 @@ footer p{
 .errors{
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font-size: 1.2rem;
+}
+
+@media screen and (max-width: 476px) {
+  .shape-text{
+    top: 90px;
+  }
 }
