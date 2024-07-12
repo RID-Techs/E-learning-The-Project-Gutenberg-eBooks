@@ -10,9 +10,7 @@ const books = () => {
       return res.json()
     })
     .then((data) => {
-      console.log(data);
       let items = data.results;
-      console.log(items)
 
       items.forEach((element) => {
       
