@@ -1,6 +1,7 @@
 // gutendex.com API has been used for this project
 
 const wraper = document.querySelector(".container");
+const loadingMessage = document.querySelector(".processing-message")
 const books = () => {
   fetch("https://gutendex.com/books")
     .then((res) => {
@@ -10,6 +11,11 @@ const books = () => {
       return res.json()
     })
     .then((data) => {
+
+      if(data){
+        loadingMessage.style.display = "none"
+      }
+
       let items = data.results;
 
       items.forEach((element) => {
@@ -66,18 +72,6 @@ const books = () => {
         bookImg.alt = "Books"
         create_P_5.append(bookImg);
 
-        bookImg.addEventListener("mouseover", ()=>{
-          bookImg.style.display = "none"
-          create_P_5.innerHTML = "Enjoy reading !!! ⇗"
-          create_P_5.classList.add("enjoy")
-        })
-        create_P_5.addEventListener("mouseout", ()=>{
-          bookImg.style.display = ""
-          create_P_5.innerHTML = ""
-          create_P_5.classList.remove("enjoy")
-          create_P_5.append(bookImg);
-        })
-
         createDiv.append(
           createImgDiv,
           create_P,
@@ -91,9 +85,12 @@ const books = () => {
     })
     .catch(error => {
       const errorMessage = document.createElement("p")
-      errorMessage.textContent = `Sorry, we got an error : ${error.message}`
+      errorMessage.textContent = `Sorry, we got an error : Failed to load data, check your Internet connexion !`
       errorMessage.classList.add("errors")
       wraper.append(errorMessage)
+      if(errorMessage){
+        loadingMessage.style.display = "none"
+      }
     })
 };
 books();
