@@ -30,6 +30,7 @@
     </div>
 
     <h1 class="shape-text">
+      <button type="button" id="hola">Open</button>
       The Project Gutenberg eBooks <img src="./Books.png" alt="Books" />
     </h1>
     <!-- <a target="_blank" href="https://icons8.com/icon/16368/books">Books</a> icon by <a target="_blank" href="https://icons8.com">Icons8</a> -->
@@ -45,5 +46,12 @@
         <p>| All the eBooks on this website are from <strong><em>The Project Gutenberg eBooks.</em></strong></p>
     </footer>
     <script src="./app.js"></script>
+    <script>
+    const opena = document.querySelector("#hola")
+    opena.addEventListener("click", () => {
+        const doc = "./Semester_4_Questions_Answers.pdf"
+        window.open(doc, "_blank")
+    })
+    </script>
   </body>
 </html>
